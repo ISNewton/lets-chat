@@ -59,7 +59,15 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function firstChats() {
+        return $this->hasMany(Chat::class , 'first_user_id');
+    }
+
+    public function secondChats() {
+        return $this->hasMany(Chat::class,'second_user_id');
+    }
+
     public function chats() {
-        return $this->hasMany(Chat::class,['id' , 'first_user_id'] , ['id' , 'second_user_id']);
+        return $this->firstChats->merge($this->secondChats);
     }
 }

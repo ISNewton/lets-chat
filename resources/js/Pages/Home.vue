@@ -8,6 +8,15 @@ export default {
         ChatsSidebar,
         Header,
     }
+   ,
+    props: {
+        chats:Object,
+    },
+    setup(props) {
+        return {
+            chats:props.chats
+        }
+    }
 }
 </script>
 
@@ -23,7 +32,7 @@ export default {
     <!-- Chatting -->
     <div class="flex flex-row justify-between bg-white">
       <!-- chat list -->
-        <chats-sidebar />
+        <chats-sidebar :chats="chats" />
       <!-- end chat list -->
       <!-- message -->
       <div class="w-full px-5 flex flex-col justify-between">

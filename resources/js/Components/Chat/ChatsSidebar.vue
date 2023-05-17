@@ -5,15 +5,22 @@ export default {
 components: {
     ChatItem,
 },
- setup() {
+    props: {
+        chats:Object
+    },
+ setup(props) {
     const selectedChat = ref(null)
 
+     const chats = ref(props.chats)
+
+     console.log(props.chats,1111)
     const setSelectedChat = (chat) => {
         selectedChat.vaule = chat
     }
     return {
         selectedChat,
-        setSelectedChat
+        setSelectedChat,
+        chats,
     }
 }
 
@@ -33,7 +40,7 @@ components: {
         <!-- end search compt -->
         <!-- user list -->
 
-        <chat-item :selected="true" />
+        <chat-item v-for="chat in chats" key="chat.id" :selected="true" />
         <!-- end user list -->
       </div>
 </template>
