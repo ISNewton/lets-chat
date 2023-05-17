@@ -16,7 +16,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/' , [HomeController::class,'index']);
 
 Route::middleware([
     'auth:sanctum',
@@ -26,4 +25,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::get('/' , [HomeController::class,'index']);
 });

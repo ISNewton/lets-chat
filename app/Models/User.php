@@ -58,4 +58,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function chats() {
+        return $this->hasMany(Chat::class,['id' , 'first_user_id'] , ['id' , 'second_user_id']);
+    }
 }
