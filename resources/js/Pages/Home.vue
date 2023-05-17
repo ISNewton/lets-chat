@@ -1,7 +1,14 @@
-<script setup>
+<script >
 import { Head, Link } from '@inertiajs/vue3';
 import ChatsSidebar from '../Components/Chat/ChatsSidebar.vue'
 import Header from '../Components/Layouts/Header.vue'
+
+export default {
+    components: {
+        ChatsSidebar,
+        Header,
+    }
+}
 </script>
 
 <template>

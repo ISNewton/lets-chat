@@ -33,10 +33,7 @@ components: {
         <!-- end search compt -->
         <!-- user list -->
 
-        <chat-item :selected="false" />
-            <chat-item  :selected="false"/>
-                <chat-item  :selected="true"/>
-
+        <chat-item :selected="true" />
         <!-- end user list -->
       </div>
 </template>

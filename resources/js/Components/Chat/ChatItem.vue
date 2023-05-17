@@ -1,25 +1,33 @@
-<script >
+<script>
+import { ref } from 'vue'
+
 export default {
-    sutup() {
-
-        const selected = defineProps({
-            selected: Boolean,
-        })
-        console.log(selected)
-        console.log(1212121)
-
-        return {
-            selected,
-        }
+    props: {
+        selected: Boolean,
+    },
+ setup(props) {
+     console.log(props.selected)
+    const selectedChat = ref(null)
+    const setSelectedChat = (chat) => {
+        selectedChat.vaule = chat
     }
+    return {
+        selectedChat,
+        setSelectedChat
+    }
+}
+
 }
 </script>
 
 <template>
 <div
-    :class="`flex flex-row py-4 px-2 items-center border-b-2 ${selected ? 'border-l-4 border-blue-400' : ''}`"
+    :class="`flex flex-row py-4 px-2 items-center border-b-2
+    ${selected ? 'border-l-4 border-blue-400' : ''}`"
 
         >
+        <div>
+        </div>
           <div class="w-1/4">
             <img
               src="https://source.unsplash.com/L2cxSuKWbpo/600x600"
