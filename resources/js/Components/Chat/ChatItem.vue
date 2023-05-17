@@ -1,9 +1,24 @@
-<script setup>
+<script >
+export default {
+    sutup() {
+
+        const selected = defineProps({
+            selected: Boolean,
+        })
+        console.log(selected)
+        console.log(1212121)
+
+        return {
+            selected,
+        }
+    }
+}
 </script>
 
 <template>
 <div
-          class="flex flex-row py-4 px-2 items-center border-b-2 border-l-4 border-blue-400"
+    :class="`flex flex-row py-4 px-2 items-center border-b-2 ${selected ? 'border-l-4 border-blue-400' : ''}`"
+
         >
           <div class="w-1/4">
             <img
