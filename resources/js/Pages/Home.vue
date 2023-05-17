@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
-
+import ChatsSidebar from '../Components/Chat/ChatsSidebar.vue'
+import Header from '../Components/Layouts/Header.vue'
 </script>
 
 <template>
@@ -10,123 +11,12 @@ import { Head, Link } from '@inertiajs/vue3';
     <!-- This is an example component -->
 <div class="container mx-auto shadow-lg rounded-lg">
         <!-- headaer -->
-    <div class="px-5 py-5 flex justify-between items-center bg-white border-b-2">
-      <div class="font-semibold text-2xl">GoingChat</div>
-      <div class="w-1/2">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="search IRL"
-          class="rounded-2xl bg-gray-100 py-3 px-5 w-full"
-        />
-      </div>
-      <div
-        class="h-12 w-12 p-2 bg-yellow-500 rounded-full text-white font-semibold flex items-center justify-center"
-      >
-        RA
-      </div>
-    </div>
+        <Header />
     <!-- end header -->
     <!-- Chatting -->
     <div class="flex flex-row justify-between bg-white">
       <!-- chat list -->
-      <div class="flex flex-col w-2/5 border-r-2 overflow-y-auto">
-        <!-- search compt -->
-        <div class="border-b-2 py-4 px-2">
-          <input
-            type="text"
-            placeholder="search chatting"
-            class="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full"
-          />
-        </div>
-        <!-- end search compt -->
-        <!-- user list -->
-        <div
-          class="flex flex-row py-4 px-2 justify-center items-center border-b-2"
-        >
-          <div class="w-1/4">
-            <img
-              src="https://source.unsplash.com/_7LbC5J-jw4/600x600"
-              class="object-cover h-12 w-12 rounded-full"
-              alt=""
-            />
-          </div>
-          <div class="w-full">
-            <div class="text-lg font-semibold">Luis1994</div>
-            <span class="text-gray-500">Pick me at 9:00 Am</span>
-          </div>
-        </div>
-        <div class="flex flex-row py-4 px-2 items-center border-b-2">
-          <div class="w-1/4">
-            <img
-              src="https://source.unsplash.com/otT2199XwI8/600x600"
-              class="object-cover h-12 w-12 rounded-full"
-              alt=""
-            />
-          </div>
-          <div class="w-full">
-            <div class="text-lg font-semibold">Everest Trip 2021</div>
-            <span class="text-gray-500">Hi Sam, Welcome</span>
-          </div>
-        </div>
-        <div
-          class="flex flex-row py-4 px-2 items-center border-b-2 border-l-4 border-blue-400"
-        >
-          <div class="w-1/4">
-            <img
-              src="https://source.unsplash.com/L2cxSuKWbpo/600x600"
-              class="object-cover h-12 w-12 rounded-full"
-              alt=""
-            />
-          </div>
-          <div class="w-full">
-            <div class="text-lg font-semibold">MERN Stack</div>
-            <span class="text-gray-500">Lusi : Thanks Everyone</span>
-          </div>
-        </div>
-        <div class="flex flex-row py-4 px-2 items-center border-b-2">
-          <div class="w-1/4">
-            <img
-              src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
-              class="object-cover h-12 w-12 rounded-full"
-              alt=""
-            />
-          </div>
-          <div class="w-full">
-            <div class="text-lg font-semibold">Javascript Indonesia</div>
-            <span class="text-gray-500">Evan : some one can fix this</span>
-          </div>
-        </div>
-        <div class="flex flex-row py-4 px-2 items-center border-b-2">
-          <div class="w-1/4">
-            <img
-              src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
-              class="object-cover h-12 w-12 rounded-full"
-              alt=""
-            />
-          </div>
-          <div class="w-full">
-            <div class="text-lg font-semibold">Javascript Indonesia</div>
-            <span class="text-gray-500">Evan : some one can fix this</span>
-          </div>
-        </div>
-
-        <div class="flex flex-row py-4 px-2 items-center border-b-2">
-          <div class="w-1/4">
-            <img
-              src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
-              class="object-cover h-12 w-12 rounded-full"
-              alt=""
-            />
-          </div>
-          <div class="w-full">
-            <div class="text-lg font-semibold">Javascript Indonesia</div>
-            <span class="text-gray-500">Evan : some one can fix this</span>
-          </div>
-        </div>
-        <!-- end user list -->
-      </div>
+        <chats-sidebar />
       <!-- end chat list -->
       <!-- message -->
       <div class="w-full px-5 flex flex-col justify-between">
@@ -220,6 +110,7 @@ import { Head, Link } from '@inertiajs/vue3';
       </div>
     </div>
 </div>
+</div>
 
-        </div>
+        <!-- </div> -->
 </template>
