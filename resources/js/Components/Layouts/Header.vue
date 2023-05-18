@@ -1,8 +1,19 @@
 <script>
+import { router } from '@inertiajs/vue3';
 import SearchUser from '../Chat/SearchUser.vue'
 export default {
     components: {
         SearchUser,
+    },
+    setup() {
+        const logout = () => {
+            console.log('logging out...')
+            router.post('logout' )
+        }
+
+        return {
+            logout
+        }
     }
 }
 </script>
@@ -16,5 +27,6 @@ export default {
       >
         RA
       </div>
+      <button @click="logout">Log out</button>
     </div>
 </template>
