@@ -13,6 +13,9 @@ class UserController extends Controller
         $users = User::where('username' , $request->username)
             ->where('id' , '!=' , auth()->id())
         ->get();
-        return $users;
+
+    return redirect()->back()->with([
+        'users' => $users,
+    ]);
     }
 }

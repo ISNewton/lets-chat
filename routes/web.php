@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,4 +29,6 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/' , [HomeController::class,'index']);
+    Route::post('/users/search' , [UserController::class,'search']);
+
 });
