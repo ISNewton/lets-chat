@@ -1,4 +1,5 @@
 <script>
+import { router } from '@inertiajs/vue3';
 import { ref, watch } from 'vue';
 
 export default {
@@ -8,6 +9,10 @@ export default {
         const searchUser = () => {
             // here search for the user
             console.log('searching...')
+            const data = router.post('users/search' , {
+                username: searchText
+            })
+            console.log(232323 , data)
         }
 
         watch(searchText , searchUser)
