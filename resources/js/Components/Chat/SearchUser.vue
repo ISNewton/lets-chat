@@ -1,0 +1,15 @@
+<script>
+</script>
+
+<template>
+
+<div class="w-1/2">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="search IRL"
+          class="rounded-2xl bg-gray-100 py-3 px-5 w-full"
+        />
+      </div>
+</template>
