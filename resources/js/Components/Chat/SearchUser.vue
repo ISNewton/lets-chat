@@ -11,6 +11,7 @@ export default {
             console.log('searching...')
             const data = router.post('users/search' , {
                 username: searchText
+
             })
             console.log(232323 , data)
         }
