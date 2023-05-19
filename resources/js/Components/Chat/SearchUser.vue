@@ -1,5 +1,5 @@
 <script>
-import { router, useForm } from '@inertiajs/vue3';
+import { router, useForm} from '@inertiajs/vue3';
 import { ref, watch } from 'vue';
 
 export default {
@@ -11,12 +11,16 @@ export default {
         const searchUser = () => {
             // here search for the user
             console.log('searching...')
-            form.post('users/search' , {
-                onSuccess(data) {
-                    console.log(3348343)
-                    console.log(data)
-                }
-            })
+
+
+        //.get('/', pickBy(form), { preserveState: true })
+//            Inertia.get('/')
+            router.get('/' , {
+                username: form.username,
+            } ,
+                {preserveState:true , onSuccess(data) {
+                console.log(data)
+            }})
         }
 
         watch(() => form.username,searchUser)
