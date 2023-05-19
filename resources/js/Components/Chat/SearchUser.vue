@@ -4,31 +4,28 @@ import { ref, watch } from 'vue';
 
 export default {
     setup() {
-        const form = useForm({
-            username: ''
-        })
+        let searchText = ref('')
+        let users = ref([])
 
         const searchUser = () => {
             // here search for the user
             console.log('searching...')
 
 
-        //.get('/', pickBy(form), { preserveState: true })
-//            Inertia.get('/')
             router.get('/' , {
-                username: form.username,
+                username: searchText.value ,
             } ,
                 {preserveState:true , onSuccess(data) {
-                console.log(data)
+                    users.value = data.props.users
             }})
+            console.log(users)
         }
 
-        watch(() => form.username,searchUser)
-        //watch(() => form.username ,  searchUser)
+        watch(searchText,searchUser)
 
         return {
-            form,
-            searchUser,
+            searchText,
+            users,
         }
     }
 }
@@ -40,12 +37,14 @@ export default {
                 type="text"
                 placeholder="Search Username"
                 className="rounded-2xl outline-none focus:outline-none  bg-gray-100 py-3 px-5 w-full"
-                v-model="form.username"
+                v-model="searchText"
             />
-                <div className="absolute z-10 w-1/4 border divide-y shadow max-h-72 overflow-y-auto bg-white">
-                        <div className="block p-2 hover:bg-indigo-50 cursor-pointer">{user.username}</div>
+
+                <div v-if="users.length" className="absolute z-10 w-1/4 border divide-y shadow max-h-72 overflow-y-auto bg-white">
+                        <div v-for="user in users"  className="block p-2 hover:bg-indigo-50 cursor-pointer">
+                            <p>{{user.username}}</p>
+                        </div>
                 </div>
 
-            )}
         </div>
 </template>
